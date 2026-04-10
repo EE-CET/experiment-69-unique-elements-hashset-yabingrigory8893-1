@@ -6,14 +6,19 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // TODO: Read the integer N
-        
-        // TODO: Create a HashSet to store the integers
-        
-        // TODO: Loop N times to read the integers and add them to the HashSet
-        
-        // TODO: Iterate through the HashSet and print the unique numbers (space-separated)
-        
-        scanner.close();
+        if (scanner.hasNextInt()) {
+            int n = scanner.nextInt();
+            HashSet<Integer> set = new HashSet<>();
+            for (int i = 0; i < n; i++) {
+                set.add(scanner.nextInt());
+            }
+            
+            int count = 0;
+            for (int val : set) {
+                System.out.print(val + (count == set.size() - 1 ? "" : " "));
+                count++;
+            }
+            System.out.println();
+        }scanner.close();
     }
 }
